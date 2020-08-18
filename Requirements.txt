@@ -1,0 +1,23 @@
+Menu Is:
+	-A Console which should know how to print options
+	-Accept input and refer to the relevant action
+		- code exection 
+		- go to next or last menu
+
+
+Requirements:
+	Provide an infrastructure to create menus easily.
+	The system should support creation of two types of menus:
+		Numeric menu - actions coupled to numbers
+		Free text menu - actions coupled to text
+
+
+	
+Every menu will show its options, and accepts an input.
+There will be an input check
+Every menu should:
+	Print it options
+	Accept an input from the program
+	Validate that input mathces an action (if input is invalid - print a message)
+	Do an action according to the input
+	Show the same menu after action finished executing
