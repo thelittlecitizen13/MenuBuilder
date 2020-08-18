@@ -14,7 +14,8 @@ namespace MenuBuilder
             {
                 base.Run();
                 choice = GetValidInput();
-                ActionOptions[choice].Action()
+                ActionOptions[choice].Action();
+                Console.ReadLine();
             }
             while (choice != ActionOptions.Keys.Last());
         }
