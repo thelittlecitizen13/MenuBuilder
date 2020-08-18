@@ -12,6 +12,8 @@ namespace MenuBuilder
         public string MenuName { get; set; }
         public string MainOutput { get; set; }
 
+        
+
         public void Run()
         {
             Console.Clear();
@@ -64,5 +66,14 @@ namespace MenuBuilder
             return ActionOptions.ContainsKey(choice);
         }
 
+        protected abstract void AppendExitOption();
+
+        public void PrintBlankLines(int amount)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                Console.WriteLine();
+            }
+        }
     }
 }

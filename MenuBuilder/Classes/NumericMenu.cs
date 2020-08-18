@@ -40,9 +40,19 @@ namespace MenuBuilder
                 if (IsChoiceValid(choice))
                     return choice;
                 else
+                {
+                    PrintBlankLines(2);
                     Console.WriteLine("Choice not valid");
+                    PrintBlankLines(2);
+
+                }
             }
         }
-        
+
+        protected override void AppendExitOption()
+        {
+            int lastKeyValue = ActionOptions.Keys.Last();
+            ActionOptions.Add(lastKeyValue++, null);
+        }
     }
 }

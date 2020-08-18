@@ -15,6 +15,7 @@ namespace MenuBuilder
                 base.Run();
                 choice = GetValidInput();
                 ActionOptions[choice].Action();
+                Console.WriteLine("Press Any Key To Continue");
                 Console.ReadLine();
             }
             while (choice != ActionOptions.Keys.Last());
@@ -42,8 +43,17 @@ namespace MenuBuilder
                     return choice;
                 }
                 else
+                {
+                    PrintBlankLines(2);
                     Console.WriteLine("Choice not valid");
+                    PrintBlankLines(2);
+                }
             }
+        }
+
+        protected override void AppendExitOption()
+        {
+            ActionOptions.Add("Exit", null);
         }
 
     }
