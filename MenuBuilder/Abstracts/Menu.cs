@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    public abstract class Menu<T> where T : IConvertible
+    public abstract class Menu<T> : IMenu where T : IConvertible
     {
         public Dictionary<T, IAction> ActionOptions { get; set; }
         public StringBuilder MenuDisplay { get; set; }
@@ -38,8 +38,8 @@ namespace MenuBuilder
                 Console.WriteLine("Cant build the menu - Actions dictionary is empty");
                 return;
             }
-            MenuDisplay.AppendLine(MainOutput);
-            StringBuilder tempMenu = new StringBuilder(MenuName);
+            StringBuilder tempMenu = new StringBuilder();
+            tempMenu.AppendLine(MenuName);
             tempMenu.AppendLine(MainOutput);
             foreach (T option in ActionOptions.Keys)
             {
