@@ -11,6 +11,7 @@ namespace MenuBuilder
 
         public void Action()
         {
+            Console.Write("Please write a name to say 'Hi' to");
             Console.WriteLine("Hi " + Console.ReadLine());
         }
     }

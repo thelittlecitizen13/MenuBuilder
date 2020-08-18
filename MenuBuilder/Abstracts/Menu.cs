@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Xml.Schema;
 
 namespace MenuBuilder
 {
@@ -14,12 +14,17 @@ namespace MenuBuilder
 
         public void Run()
         {
+            Console.Clear();
             if (!IsMenuBuilt())
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"Menu ${MenuName} - No menu to show");
+                Console.ResetColor();
                 return;
             }
+            Console.ForegroundColor = ConsoleColor.Green;
             ShowMenu();
+            Console.ResetColor();
         }
 
         public void ShowMenu()
@@ -39,8 +44,10 @@ namespace MenuBuilder
                 return;
             }
             StringBuilder tempMenu = new StringBuilder();
-            tempMenu.AppendLine(MenuName);
-            tempMenu.AppendLine(MainOutput);
+            tempMenu.AppendLine($"-------- {MenuName.ToUpper()} --------");
+            tempMenu.AppendLine();
+            tempMenu.AppendLine($"---{MainOutput}---");
+            tempMenu.AppendLine();
             foreach (T option in ActionOptions.Keys)
             {
                 string line = option.ToString();
@@ -48,7 +55,7 @@ namespace MenuBuilder
                     line += " - " + ActionOptions[option].actionDescriptionOutput;
                 tempMenu.AppendLine(line);
             }
-
+            tempMenu.AppendLine("==================================");
             MenuDisplay = tempMenu;
         }
 

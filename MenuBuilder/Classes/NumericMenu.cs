@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MenuBuilder.Classes;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace MenuBuilder
@@ -8,7 +10,18 @@ namespace MenuBuilder
     {
         public void Run()
         {
-            base.Run();
+            int choice = 0;
+            do
+            {
+                base.Run();
+                Console.Write("Your choice: ");
+                choice = InputHandler.ReadIntParser();
+                if (IsChoiceValid(choice))
+                    ActionOptions[choice].Action();
+                else
+                    Console.WriteLine("Choice not valid");
+            }
+            while (choice != ActionOptions.Keys.Last());
         }
 
         

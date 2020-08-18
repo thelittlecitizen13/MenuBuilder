@@ -25,7 +25,7 @@ namespace MenuBuilder.Classes
 
 
 
-        public static List<string> GetStringInputs (int numberOfInputs, string output)
+        public static List<string> GetStringListOfInputs (int numberOfInputs, string output)
         {
             Console.WriteLine(output);
             List<string> inputs = new List<string>();
@@ -40,7 +40,7 @@ namespace MenuBuilder.Classes
             }
             return inputs;
         }
-        public static List<int> GetNumericInputs(int numberOfInputs, string output)
+        public static List<int> GetNumericListOfInputs(int numberOfInputs, string output)
         {
             Console.WriteLine(output);
             List<int> inputs = new List<int>();

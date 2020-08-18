@@ -11,7 +11,7 @@ namespace MenuBuilder
 
         public void Action()
         {
-            Console.WriteLine(String.Join(", ", InputHandler.GetNumericInputs(3, "Enter random inputs")));
+            Console.WriteLine(String.Join(", ", InputHandler.GetNumericListOfInputs(3, "Enter random inputs")));
         }
     }
 }
