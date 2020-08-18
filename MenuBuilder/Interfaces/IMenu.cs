@@ -6,5 +6,6 @@ namespace MenuBuilder
 {
     interface IMenu
     {
+        public void Run();
     }
 }

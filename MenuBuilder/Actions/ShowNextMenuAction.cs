@@ -4,14 +4,14 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    class ShowNextMenuAction : IAction
+    class ShowNextMenuAction : IAction 
     {
         public string actionDescriptionOutput { get; set; }
 
         public IMenu nextMenu { get; set; }
         public void Action()
         {
-            Console.WriteLine("Hi Assa");
+            nextMenu.Run();
         }
         public ShowNextMenuAction(IMenu next, string output)
         {

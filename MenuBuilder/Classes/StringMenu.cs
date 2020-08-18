@@ -7,7 +7,7 @@ namespace MenuBuilder
 {
     public class StringMenu : Menu<string>
     { 
-        public void Run()
+        public new void Run()
         {
             string choice = "";
             do
@@ -45,7 +45,7 @@ namespace MenuBuilder
             string choice;
             while (true)
             {
-                Console.Write("Your choice: ");
+                Console.Write("Your choice (Case Sensitive!): ");
                 choice = Console.ReadLine();
                 if (IsChoiceValid(choice))
                 {

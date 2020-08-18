@@ -53,7 +53,8 @@ namespace MenuBuilder
         protected override void AppendExitOption()
         {
             int lastKeyValue = ActionOptions.Keys.Last();
-            ActionOptions.Add(lastKeyValue++, new ExitAction());
+            lastKeyValue++;
+            ActionOptions.Add(lastKeyValue, new ExitAction());
         }
     }
 }
