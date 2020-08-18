@@ -4,12 +4,13 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    class StringMenu : Menu
+    public class StringMenu : Menu<string>
     {
-        public Dictionary<string, IAction> ActionOptions { get; set; }
+        
 
         public void Run()
         {
+            
             base.Run();
         }
 
@@ -20,6 +21,7 @@ namespace MenuBuilder
             MenuDisplay = new StringBuilder();
             MenuName = name;
             MainOutput = mainOutput;
+            BuildMenu(false);
         }
 
     }
