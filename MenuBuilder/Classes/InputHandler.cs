@@ -6,7 +6,7 @@ namespace MenuBuilder.Classes
 {
     class InputHandler<T> where T : IConvertible
     {
-        public int ReadIntParser()
+        public static int ReadIntParser()
         {
             int choice = 0;
             while (choice == 0)
@@ -28,7 +28,7 @@ namespace MenuBuilder.Classes
             return menuObject.ActionOptions.ContainsKey(choice);
         }
 
-        public List<string> GetStringInputs (int numberOfInputs, string output)
+        public static List<string> GetStringInputs (int numberOfInputs, string output)
         {
             Console.WriteLine(output);
             List<string> inputs = new List<string>();
@@ -43,7 +43,7 @@ namespace MenuBuilder.Classes
             }
             return inputs;
         }
-        public List<int> GetNumericInputs(int numberOfInputs, string output)
+        public static List<int> GetNumericInputs(int numberOfInputs, string output)
         {
             Console.WriteLine(output);
             List<int> inputs = new List<int>();
