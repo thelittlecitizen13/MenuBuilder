@@ -32,12 +32,13 @@ namespace MenuBuilder
         }
         protected void BuildMenu(bool addActionDescriptionOutput)
         {
-            MenuDisplay.AppendLine(MainOutput);
+            
             if (ActionOptions.Count == 0)
             {
                 Console.WriteLine("Cant build the menu - Actions dictionary is empty");
                 return;
             }
+            MenuDisplay.AppendLine(MainOutput);
             StringBuilder tempMenu = new StringBuilder(MenuName);
             tempMenu.AppendLine(MainOutput);
             foreach (T option in ActionOptions.Keys)

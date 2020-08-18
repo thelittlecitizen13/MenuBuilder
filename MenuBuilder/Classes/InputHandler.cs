@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuBuilder.Classes
 {
-    class InputHandler<T> where T : IConvertible
+    class InputHandler
     {
         public static int ReadIntParser()
         {
@@ -23,10 +23,7 @@ namespace MenuBuilder.Classes
             return choice;
         }
 
-        public bool IsChoiceValid(Menu<T> menuObject, T choice)
-        {
-            return menuObject.ActionOptions.ContainsKey(choice);
-        }
+
 
         public static List<string> GetStringInputs (int numberOfInputs, string output)
         {
