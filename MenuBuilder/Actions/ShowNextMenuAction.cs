@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MenuBuilder.Actions
+namespace MenuBuilder
 {
     class ShowNextMenuAction : IAction
     {
