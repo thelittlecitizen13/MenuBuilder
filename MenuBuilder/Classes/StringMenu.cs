@@ -14,6 +14,7 @@ namespace MenuBuilder
             {
                 base.Run();
                 choice = GetValidInput();
+                ActionOptions[choice].Action()
             }
             while (choice != ActionOptions.Keys.Last());
         }
@@ -37,7 +38,6 @@ namespace MenuBuilder
                 choice = Console.ReadLine();
                 if (IsChoiceValid(choice))
                 {
-                    ActionOptions[choice].Action();
                     return choice;
                 }
                 else

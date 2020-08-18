@@ -14,12 +14,7 @@ namespace MenuBuilder
             do
             {
                 base.Run();
-                Console.Write("Your choice: ");
-                choice = InputHandler.ReadIntParser();
-                if (IsChoiceValid(choice))
-                    ActionOptions[choice].Action();
-                else
-                    Console.WriteLine("Choice not valid");
+                choice = GetValidInput();
             }
             while (choice != ActionOptions.Keys.Last());
         }
@@ -34,6 +29,19 @@ namespace MenuBuilder
             BuildMenu(true);
         }
 
+        public int GetValidInput()
+        {
+            int choice;
+            while(true)
+            {
+                Console.Write("Your choice: ");
+                choice = InputHandler.ReadIntParser();
+                if (IsChoiceValid(choice))
+                    return choice;
+                else
+                    Console.WriteLine("Choice not valid");
+            }
+        }
         
     }
 }
