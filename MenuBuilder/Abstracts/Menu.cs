@@ -51,5 +51,10 @@ namespace MenuBuilder
             MenuDisplay = tempMenu;
         }
 
+        public bool IsChoiceValid(T choice)
+        {
+            return ActionOptions.ContainsKey(choice);
+        }
+
     }
 }
