@@ -1,5 +1,4 @@
-﻿using MenuBuilder.Classes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +7,7 @@ namespace MenuBuilder
 {
     public class NumericMenu : Menu <int>
     {
-        public void Run()
+        public new void Run()
         {
             int choice = 0;
             do
@@ -27,7 +26,9 @@ namespace MenuBuilder
             MenuDisplay = new StringBuilder();
             MenuName = name;
             MainOutput = mainOutput;
+            AppendExitOption();
             BuildMenu(true);
+            
         }
 
         public int GetValidInput()
@@ -52,7 +53,7 @@ namespace MenuBuilder
         protected override void AppendExitOption()
         {
             int lastKeyValue = ActionOptions.Keys.Last();
-            ActionOptions.Add(lastKeyValue++, null);
+            ActionOptions.Add(lastKeyValue++, new ExitAction());
         }
     }
 }

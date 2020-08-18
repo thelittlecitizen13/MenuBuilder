@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MenuBuilder.Classes
+namespace MenuBuilder
 {
     class InputHandler
     {

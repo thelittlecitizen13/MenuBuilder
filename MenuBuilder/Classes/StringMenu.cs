@@ -14,7 +14,14 @@ namespace MenuBuilder
             {
                 base.Run();
                 choice = GetValidInput();
-                ActionOptions[choice].Action();
+                try
+                {
+                    ActionOptions[choice].Action();
+                }
+                catch (NullReferenceException)
+                {
+                    Console.WriteLine("Action is not available at the moment");
+                }
                 Console.WriteLine("Press Any Key To Continue");
                 Console.ReadLine();
             }
@@ -28,7 +35,9 @@ namespace MenuBuilder
             MenuDisplay = new StringBuilder();
             MenuName = name;
             MainOutput = mainOutput;
+            AppendExitOption();
             BuildMenu(false);
+            
         }
 
         private string GetValidInput()
@@ -53,7 +62,7 @@ namespace MenuBuilder
 
         protected override void AppendExitOption()
         {
-            ActionOptions.Add("Exit", null);
+            ActionOptions.Add("Exit", new ExitAction());
         }
 
     }
