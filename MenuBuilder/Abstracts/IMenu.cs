@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace MenuBuilder
 {
-    class StructMenu<T> : IMenu where T : struct
+    public abstract class Menu
     {
-        public Dictionary<T, IAction> ActionOptions { get; set; }
         public StringBuilder MenuDisplay { get; set; }
-
         public string MenuName { get; set; }
-
         public string MainOutput { get; set; }
 
         public void Run()
@@ -27,14 +25,6 @@ namespace MenuBuilder
         {
             Console.WriteLine(MenuDisplay.ToString());
         }
-        public StructMenu(Dictionary<T, IAction> actions, string name, string mainOutput)
-        {
-            ActionOptions = actions;
-            MenuDisplay = new StringBuilder();
-            MenuName = name;
-            MainOutput = mainOutput;
-        }
-
         private bool IsMenuBuilt()
         {
             return !string.IsNullOrEmpty(Convert.ToString(MenuDisplay));

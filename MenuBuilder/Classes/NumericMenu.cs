@@ -4,17 +4,18 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    class StringMenu : Menu
+    class NumericMenu : Menu 
     {
-        public Dictionary<string, IAction> ActionOptions { get; set; }
+        public Dictionary<int, IAction> ActionOptions { get; set; }
+        
 
         public void Run()
         {
             base.Run();
         }
 
-
-        public StringMenu(Dictionary<string,IAction> actions, string name, string mainOutput)
+        
+        public NumericMenu(Dictionary<int, IAction> actions, string name, string mainOutput)
         {
             ActionOptions = actions;
             MenuDisplay = new StringBuilder();
@@ -22,5 +23,6 @@ namespace MenuBuilder
             MainOutput = mainOutput;
         }
 
+        
     }
 }
