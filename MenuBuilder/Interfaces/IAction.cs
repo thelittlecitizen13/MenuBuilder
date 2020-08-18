@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MenuBuilder.Interfaces
+namespace MenuBuilder
 {
-    class IAction
+    interface IAction
     {
+        string Output { get;  }
+        void Action();
     }
 }

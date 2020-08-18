@@ -4,9 +4,9 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    class StringMenu : IMenu
+    class StructMenu<T> : IMenu where T : struct
     {
-        public Dictionary<string, IAction> ActionOptions { get; set; }
+        public Dictionary<T, IAction> ActionOptions { get; set; }
         public StringBuilder MenuDisplay { get; set; }
 
         public string MenuName { get; set; }
@@ -27,9 +27,7 @@ namespace MenuBuilder
         {
             Console.WriteLine(MenuDisplay.ToString());
         }
-
-
-        public StringMenu(Dictionary<string,IAction> actions, string name, string mainOutput)
+        public StructMenu(Dictionary<T, IAction> actions, string name, string mainOutput)
         {
             ActionOptions = actions;
             MenuDisplay = new StringBuilder();
@@ -39,7 +37,7 @@ namespace MenuBuilder
 
         private bool IsMenuBuilt()
         {
-            return ! string.IsNullOrEmpty(Convert.ToString(MenuDisplay));
+            return !string.IsNullOrEmpty(Convert.ToString(MenuDisplay));
         }
     }
 }

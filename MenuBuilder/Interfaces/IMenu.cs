@@ -11,6 +11,7 @@ namespace MenuBuilder
         public string MenuName { get;}
         public string MainOutput { get; }
 
+        void Run();
         void ShowMenu();
     }
 }
