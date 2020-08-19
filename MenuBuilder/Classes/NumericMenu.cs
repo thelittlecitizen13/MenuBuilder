@@ -14,11 +14,20 @@ namespace MenuBuilder
             {
                 base.Run();
                 choice = GetValidInput();
+                try
+                {
+                    ActionOptions[choice].Action();
+                }
+                catch (NullReferenceException)
+                {
+                    Console.WriteLine("Action is not available at the moment");
+                }
+                Console.WriteLine("Press Any Key To Continue");
                 Console.ReadLine();
             }
             while (choice != ActionOptions.Keys.Last());
         }
-
+           
         
         public NumericMenu(Dictionary<int, IAction> actions, string name, string mainOutput)
         {
@@ -42,9 +51,9 @@ namespace MenuBuilder
                     return choice;
                 else
                 {
-                    PrintBlankLines(2);
+                    InputHandler.PrintBlankLines(2);
                     Console.WriteLine("Choice not valid");
-                    PrintBlankLines(2);
+                    InputHandler.PrintBlankLines(2);
 
                 }
             }

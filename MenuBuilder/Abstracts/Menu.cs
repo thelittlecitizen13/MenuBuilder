@@ -14,7 +14,7 @@ namespace MenuBuilder
 
         
 
-        public void Run()
+        public virtual void Run()
         {
             Console.Clear();
             if (!IsMenuBuilt())
@@ -68,12 +68,6 @@ namespace MenuBuilder
 
         protected abstract void AppendExitOption();
 
-        public void PrintBlankLines(int amount)
-        {
-            for (int i = 0; i < amount; i++)
-            {
-                Console.WriteLine();
-            }
-        }
+        
     }
 }

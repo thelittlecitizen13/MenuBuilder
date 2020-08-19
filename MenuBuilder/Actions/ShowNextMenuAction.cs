@@ -8,12 +8,12 @@ namespace MenuBuilder
     {
         public string actionDescriptionOutput { get; set; }
 
-        public IMenu nextMenu { get; set; }
+        public NumericMenu nextMenu { get; set; }
         public void Action()
         {
             nextMenu.Run();
         }
-        public ShowNextMenuAction(IMenu next, string output)
+        public ShowNextMenuAction(NumericMenu next, string output)
         {
             actionDescriptionOutput = output;
             nextMenu = next;

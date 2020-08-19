@@ -53,9 +53,9 @@ namespace MenuBuilder
                 }
                 else
                 {
-                    PrintBlankLines(2);
+                    InputHandler.PrintBlankLines(2);
                     Console.WriteLine("Choice not valid");
-                    PrintBlankLines(2);
+                    InputHandler.PrintBlankLines(2);
                 }
             }
         }

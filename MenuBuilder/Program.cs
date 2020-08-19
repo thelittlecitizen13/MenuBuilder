@@ -16,11 +16,11 @@ namespace MenuBuilder
 
             Dictionary<string, IAction> stringOptions = new Dictionary<string, IAction>()
             {
-                {"Assa" , new PrintAssaAction() } , {"Name" , new PrintNameAction() } , {"Numbers" , new PrintNumbersAction() }, { "Numeric Menu", new ShowNextMenuAction(numMenu, "Show numeric menu")}
+                {"Assa" , new PrintAssaAction() } , {"Name" , new PrintNameAction() } , {"Numbers" , new PrintNumbersAction() }, { "NumMenu", new ShowNextMenuAction(numMenu, "Show numeric menu")}
             };
             StringMenu strMenu = new StringMenu(stringOptions, "My test menu", "Please choose one of the following:");
 
-            
+
             strMenu.Run();
         }
     }
