@@ -7,7 +7,7 @@ namespace MenuBuilder
 {
     public abstract class Menu<T> : IMenu where T : IConvertible
     {
-        public Dictionary<T, IAction> ActionOptions { get; set; }
+        public Dictionary<T, Option> ActionOptions { get; set; }
         public StringBuilder MenuDisplay { get; set; }
         public string MenuName { get; set; }
         public string MainOutput { get; set; }

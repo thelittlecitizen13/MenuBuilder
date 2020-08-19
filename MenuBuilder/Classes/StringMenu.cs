@@ -16,7 +16,7 @@ namespace MenuBuilder
                 choice = GetValidInput();
                 try
                 {
-                    ActionOptions[choice].Action();
+                    ActionOptions[choice].RunAction();
                 }
                 catch (NullReferenceException)
                 {
@@ -29,7 +29,7 @@ namespace MenuBuilder
         }
 
 
-        public StringMenu(Dictionary<string,IAction> actions, string name, string mainOutput, bool addActionDescriptionOutput)
+        public StringMenu(Dictionary<string,Option> actions, string name, string mainOutput, bool addActionDescriptionOutput)
         {
             ActionOptions = actions;
             MenuDisplay = new StringBuilder();
@@ -62,7 +62,7 @@ namespace MenuBuilder
 
         protected override void AppendExitOption()
         {
-            ActionOptions.Add("Exit", new ExitAction());
+            ActionOptions.Add("Exit", new Option(Actions.DoNothing, "Exit / Back"));
         }
 
     }
