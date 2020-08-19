@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MenuBuilder.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace MenuBuilder
             do
             {
                 base.Run();
-                choice = GetValidInput();
+                choice = MenuInputHandler.GetStringValidInput(this);
                 try
                 {
                     ActionOptions[choice].RunAction();
@@ -40,25 +41,7 @@ namespace MenuBuilder
             
         }
 
-        private string GetValidInput()
-        {
-            string choice;
-            while (true)
-            {
-                Console.Write("Your choice (Case Sensitive!): ");
-                choice = Console.ReadLine();
-                if (IsChoiceValid(choice))
-                {
-                    return choice;
-                }
-                else
-                {
-                    FunctionInputHandler.PrintBlankLines(2);
-                    Console.WriteLine("Choice not valid");
-                    FunctionInputHandler.PrintBlankLines(2);
-                }
-            }
-        }
+        
 
         protected override void AppendExitOption()
         {

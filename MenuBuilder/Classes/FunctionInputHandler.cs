@@ -17,7 +17,7 @@ namespace MenuBuilder
                 }
                 catch
                 {
-                    Console.WriteLine("Wrong input, please try again");
+                    Console.WriteLine("Wrong input, please try again:");
                 }
             }
             return choice;
