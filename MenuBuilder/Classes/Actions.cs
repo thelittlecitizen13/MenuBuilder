@@ -8,7 +8,7 @@ namespace MenuBuilder
     {
         public static void PrintNumbers()
         {
-            Console.WriteLine(String.Join(", ", InputHandler.GetNumericListOfInputs(3, "Enter random inputs")));
+            Console.WriteLine(String.Join(", ", FunctionInputHandler.GetNumericListOfInputs(3, "Enter random inputs")));
         }
 
         public static void PrintName()

@@ -46,14 +46,14 @@ namespace MenuBuilder
             while(true)
             {
                 Console.Write("Your choice: ");
-                choice = InputHandler.ReadIntParser();
+                choice = FunctionInputHandler.ReadIntParser();
                 if (IsChoiceValid(choice))
                     return choice;
                 else
                 {
-                    InputHandler.PrintBlankLines(2);
+                    FunctionInputHandler.PrintBlankLines(2);
                     Console.WriteLine("Choice not valid");
-                    InputHandler.PrintBlankLines(2);
+                    FunctionInputHandler.PrintBlankLines(2);
 
                 }
             }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    public class InputHandler
+    public class FunctionInputHandler
     {
         public static int ReadIntParser()
         {
