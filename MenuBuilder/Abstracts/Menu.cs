@@ -5,7 +5,7 @@ using System.Xml.Schema;
 
 namespace MenuBuilder
 {
-    public abstract class Menu<T> : IMenu where T : IConvertible
+    public abstract class Menu<T> where T : IConvertible
     {
         public Dictionary<T, Option> ActionOptions { get; set; }
         public StringBuilder MenuDisplay { get; set; }
