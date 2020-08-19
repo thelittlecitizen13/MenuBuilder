@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    class ShowNextMenuAction : IAction 
+    public class ShowNextMenuAction : IAction 
     {
         public string actionDescriptionOutput { get; set; }
 

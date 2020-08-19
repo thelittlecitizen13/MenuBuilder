@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    class PrintNumbersAction : IAction
+    public class PrintNumbersAction : IAction
     {
         public string actionDescriptionOutput => "Print Random Numbers";
 

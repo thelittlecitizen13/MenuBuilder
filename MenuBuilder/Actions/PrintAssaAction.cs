@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MenuBuilder
 {
-    class PrintAssaAction : IAction
+    public class PrintAssaAction : IAction
     {
         public string actionDescriptionOutput => "Print Assa";
 
