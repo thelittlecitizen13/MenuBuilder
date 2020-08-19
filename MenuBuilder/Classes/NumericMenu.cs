@@ -29,14 +29,14 @@ namespace MenuBuilder
         }
            
         
-        public NumericMenu(Dictionary<int, IAction> actions, string name, string mainOutput)
+        public NumericMenu(Dictionary<int, IAction> actions, string name, string mainOutput, bool addActionDescriptionOutput)
         {
             ActionOptions = actions;
             MenuDisplay = new StringBuilder();
             MenuName = name;
             MainOutput = mainOutput;
             AppendExitOption();
-            BuildMenu(true);
+            BuildMenu(addActionDescriptionOutput);
             
         }
 

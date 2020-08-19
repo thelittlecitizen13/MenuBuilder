@@ -29,14 +29,14 @@ namespace MenuBuilder
         }
 
 
-        public StringMenu(Dictionary<string,IAction> actions, string name, string mainOutput)
+        public StringMenu(Dictionary<string,IAction> actions, string name, string mainOutput, bool addActionDescriptionOutput)
         {
             ActionOptions = actions;
             MenuDisplay = new StringBuilder();
             MenuName = name;
             MainOutput = mainOutput;
             AppendExitOption();
-            BuildMenu(false);
+            BuildMenu(addActionDescriptionOutput);
             
         }
 
